@@ -12,7 +12,7 @@ import { CategoryviewmoreComponent } from './categoryviewmore/categoryviewmore.c
 export class CategorydisplayComponent implements OnInit {
 
   catarr : categories[] = [];
-  displayedColumns: string[] = ['cat_id', 'cat_name','Action'];
+  displayedColumns: string[] = ['delete','cat_id', 'cat_name','Action'];
   dataSource: MatTableDataSource<categories>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;

@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routingArr } from './app.routing';
+import { FormsModule } from "@angular/forms";
 import { HttpClientModule} from '@angular/common/http';
-import { MatCardModule,MatIconModule,MatButtonModule,MatTableModule, MatSelectModule, MatFormFieldModule, MatPaginatorModule, MatCheckboxModule, MatDialogModule} from '@angular/material';
+import { MatCardModule,MatIconModule,MatButtonModule,MatTableModule, MatSelectModule, MatFormFieldModule, MatPaginatorModule, MatCheckboxModule, MatDialogModule, MatSortModule, MatSortHeader, MatFormFieldControl} from '@angular/material';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MenubarComponent } from './menubar/menubar.component';
@@ -18,6 +19,7 @@ import { ProductdisplayComponent } from './productdisplay/productdisplay.compone
 import { ProductviewmoreComponent } from './productdisplay/productviewmore/productviewmore.component';
 import { CategoryviewmoreComponent } from './categorydisplay/categoryviewmore/categoryviewmore.component';
 import { CategorydisplayComponent } from './categorydisplay/categorydisplay.component';
+import { AddproductComponent } from './productdisplay/addproduct/addproduct.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +30,13 @@ import { CategorydisplayComponent } from './categorydisplay/categorydisplay.comp
     ProductdisplayComponent,
     ProductviewmoreComponent,
     CategorydisplayComponent,
-    CategoryviewmoreComponent
+    CategoryviewmoreComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
+    MatInputModule,
+    FormsModule,
     routingArr,
     MatSelectModule,
     MatDialogModule,
@@ -41,6 +46,7 @@ import { CategorydisplayComponent } from './categorydisplay/categorydisplay.comp
     MatInputModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
     MatIconModule,
     BrowserAnimationsModule,
     LayoutModule,
@@ -50,7 +56,8 @@ import { CategorydisplayComponent } from './categorydisplay/categorydisplay.comp
     MatSidenavModule,
     MatListModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
   ],
   entryComponents:[
     ViewmoreComponent,

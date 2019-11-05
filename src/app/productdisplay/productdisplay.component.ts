@@ -3,6 +3,7 @@ import { Product } from './product';
 import { ProductdataserviceService } from './productdataservice.service';
 import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
 import { ProductviewmoreComponent } from './productviewmore/productviewmore.component';
+import { Routes, Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { ProductviewmoreComponent } from './productviewmore/productviewmore.comp
 export class ProductdisplayComponent implements OnInit {
   productarr:Product[]=[];
 
-  displayedColumns:string[]=['delete','pro_name','pro_price','pro_qty','pro_mfg','Action'];
+  displayedColumns:string[]=['delete','pro_name','pro_price','pro_qty','pro_mfg' , 'cat_name','Action'];
   dataSource:MatTableDataSource<Product>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -21,7 +22,7 @@ export class ProductdisplayComponent implements OnInit {
 
 
  constructor(public _productdata:ProductdataserviceService,
-  public _dialog:MatDialog) {
+  public _dialog:MatDialog,private router:Router) {
    this.dataSource=new MatTableDataSource();
   }
 
@@ -51,6 +52,10 @@ export class ProductdisplayComponent implements OnInit {
         }
       );
     }
+  }
+  onAddProduct()
+  {
+    this.router.navigate(["addproduct"]);
   }
 
   applyFilter(filterValue: string) {

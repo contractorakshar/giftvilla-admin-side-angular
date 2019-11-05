@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Product } from './product';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,10 @@ export class ProductdataserviceService {
   deleteProduct(pro_id: number) {
     let x = new HttpHeaders().set('Content-Type', 'application/json');
     return this._http.delete(this.url + pro_id ,{headers:x});
+  }
+  addProduct(item)
+  {
+      return this._http.post(this.url,item);
   }
   /*getProductById(pro_id:number){
     let x = new HttpHeaders().set('Content-Type', 'application/json');

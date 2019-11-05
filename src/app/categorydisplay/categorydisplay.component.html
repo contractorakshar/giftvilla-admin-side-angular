@@ -1,10 +1,17 @@
 <mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Category Here">
 </mat-form-field>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
-
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef>
+          <button mat-raised-button color="warn">Delete Selected</button>
+      </th>
+      <td mat-cell *matCellDef="let row">
+        <mat-checkbox></mat-checkbox>
+      </td>
+    </ng-container>
 
     <ng-container matColumnDef="cat_id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
@@ -40,5 +47,5 @@
     </tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[1, 4, 25, 100]"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[1, 3, 5, 25]"></mat-paginator>
 </div>

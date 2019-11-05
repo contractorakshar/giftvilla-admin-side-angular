@@ -14,18 +14,20 @@ export class ProductviewmoreComponent implements OnInit {
   pro_price:number=0;
   pro_qty:Number=0;;
   pro_mfg:string="";
-  pro_img:string="";
+  //pro_img:string="";
   pro_info:string="";
+  pro_color:string=""
   constructor(public dialogref:MatDialogRef<ProductviewmoreComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Product,) { }
 
   ngOnInit() {
     this.pro_id=this.data.pro_id;
     this.pro_name=this.data.pro_name;
+    this.pro_color=this.data.pro_color;
     this.pro_price=this.data.pro_price;
     this.pro_qty=this.data.pro_qty;
     this.pro_mfg=this.data.pro_mfg;
-    this.pro_img=this.data.pro_img;
+    //this.pro_img=this.data.pro_img;
     this.pro_info=this.data.pro_info;
   }
   onCancelClick() {
