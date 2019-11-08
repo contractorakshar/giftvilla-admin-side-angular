@@ -21,9 +21,9 @@ export class AddproductComponent implements OnInit {
   pro_mfg:string;
   pro_img:string;
   pro_info:string;
-  fk_cat_id:string;
+  fk_cat_id:number;
   cat_id:categories;
-  selected:string;
+  selected:number;
   constructor(public _ser:ProductdataserviceService,public _route:Router,public _catser:CategorydataService) { }
   ngOnInit() {
     this._catser.getAllCategory().subscribe(
